@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(void) {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	// 정렬을 이용한 방법
+
+	int a[3];
+
+	cin >> a[0] >> a[1] >> a[2];
+	
+	sort(a, a + 3); // 오름차순 정렬
+
+	if (a[0] == a[2]) cout << 10000 + a[0] * 1000;	// 세수가 동일
+	else if (a[0] == a[1] || a[1] == a[2]) cout << 1000 + a[1] * 1000;	// 두수가 동일
+	else cout << a[2] * 100;	// 같지 않을 떄(오름차순 정렬을 함으로써 a[2]에 곱하기
+
+	return 0;
+} 
