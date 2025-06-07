@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(void) {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int x, odd = 0, sum = 0, min = 100;
+	
+	for (int i = 0; i < 7; i++) {
+		cin >> x;
+		
+		if (x & 1) {		// 홀수는 0이기에  ex) 0010 & 0001 (비트연산)
+			odd += 1;
+			sum += x;
+
+			if (x < min)
+				min = x;
+		}
+	}
+
+	if (odd) cout << sum << "\n" << min;	// odd는 홀수의 유무 확인
+	else cout << "-1";
+
+	return 0;
+} 
